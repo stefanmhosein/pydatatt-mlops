@@ -3,3 +3,6 @@ scikit-learn
 tensorflow
 shap
 matplotlib
+ipykernel
+fastapi
+uvicorn
