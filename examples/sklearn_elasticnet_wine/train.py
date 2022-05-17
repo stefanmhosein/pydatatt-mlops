@@ -51,7 +51,7 @@ if __name__ == "__main__":
     train_y = train[["quality"]]
     test_y = test[["quality"]]
 
-    max_iter = float(sys.argv[1]) if len(sys.argv) > 1 else 100
+    max_iter = int(sys.argv[1]) if len(sys.argv) > 1 else 100
     l1_ratio = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
 
     with mlflow.start_run():
