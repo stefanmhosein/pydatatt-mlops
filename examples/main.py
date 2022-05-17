@@ -31,7 +31,7 @@ def read_input(
 ):
     logger.info("logging from the root logger")
     with open(
-        "{CHANGE THIS TO YOUR PATH}",
+        "file:///Users/stefanhosein/other/pydatatt-mlops/examples/sklearn_elasticnet_wine/mlruns/0/5b606f5c1186486982a60b3d5929eae3/artifacts/model/model.pkl",
         "rb",
     ) as pickle_file:
         model = pickle.load(pickle_file)
@@ -52,11 +52,6 @@ def read_input(
     return {"predicted quality": quality}
 
 
-@app.get("/items/")
-async def read_items(q: Union[List[str], None] = Query(default=None)):
-    logger.info("logging from the root logger")
-    query_items = {"q": q}
-    return query_items
 
 
 if __name__ == "__main__":
