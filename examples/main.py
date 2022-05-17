@@ -31,7 +31,7 @@ def read_input(
 ):
     logger.info("logging from the root logger")
     with open(
-        "file:///Users/stefanhosein/other/pydatatt-mlops/examples/sklearn_elasticnet_wine/mlruns/0/5b606f5c1186486982a60b3d5929eae3/artifacts/model/model.pkl",
+        "{DIRECTORY}",
         "rb",
     ) as pickle_file:
         model = pickle.load(pickle_file)
@@ -49,9 +49,7 @@ def read_input(
         alcohol,
     ]
     quality = model.predict(np.array(data).reshape(1, -1))[0]
-    return {"predicted quality": quality}
-
-
+    return {"predicted quality": str(quality)}
 
 
 if __name__ == "__main__":
